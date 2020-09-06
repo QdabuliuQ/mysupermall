@@ -4,10 +4,11 @@ import VueRouter from 'vue-router'
 // 导入插件
 Vue.use(VueRouter)
 // 路由懒加载  引入各个组件
-const home = () => import ('views/home/Home.vue')
-const classify = () => import ('views/classify/Classify.vue')
-const cart = () => import ('views/cart/Cart.vue')
-const profile = () => import ('views/proflie/Proflie.vue')
+const home = () => import ('views/home/Home.vue') // 首页页面
+const classify = () => import ('views/classify/Classify.vue') // 分类页面
+const cart = () => import ('views/cart/Cart.vue') // 购物车页面
+const profile = () => import ('views/proflie/Proflie.vue')  // 个人页面
+const detail = () => import ('views/detail/Detail.vue')  // 详情页面
 
 // 定义路由规则
 const routes = [
@@ -16,7 +17,9 @@ const routes = [
   { path: '/home', component:home },
   { path: '/classify', component:classify },
   { path: '/cart', component:cart },
-  { path: '/profile', component:profile }
+  { path: '/profile', component:profile },
+  // 详情页面传递参数
+  { path: '/detail/:iid', component: detail }
 ]
 
 const router = new VueRouter({

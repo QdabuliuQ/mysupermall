@@ -27,3 +27,15 @@ export function request(config){
         console.log(err);
     })
 }
+
+// 请求商品数据
+export function requestGoods(config){
+    // 创建 axios 实例
+    const instance = axios.create({
+        baseURL:'http://152.136.185.210:8000/api/z8',
+        timeout: 5000  // 请求时长 5000毫秒
+    })
+
+    // 直接将 实例对象 返回
+    return instance(config) 
+}   

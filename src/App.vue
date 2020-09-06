@@ -1,9 +1,13 @@
 <template>
   <div id="app">
     <!-- 路由占位符 -->
-    <router-view></router-view>
+    <!-- keep-alive会将路由的内容保存 不会销毁 -->
+    <!-- exclude在组件切换的时候不会将Detail保存 而是进行销毁 -->
+    <keep-alive exclude="Detail">
+      <router-view></router-view>
+    </keep-alive>
     <!-- 父组件 -->
-    <tabbar>
+    <tabbar class="bottomNav">
       <!-- 子组件 -->
       <!-- 给每一个组件的 path 属性 设置指定路由地址 -->
       <tabbaritem path='/home' activeColor='red'>
@@ -50,4 +54,7 @@ export default {
 <style scoped>
   /* 通过别名引用文件 */
   @import 'assets/css/base.css';
+  .bottomNav{
+    z-index: 10;
+  }
 </style>

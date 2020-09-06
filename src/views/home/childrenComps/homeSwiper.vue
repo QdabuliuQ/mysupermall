@@ -5,7 +5,7 @@
             <!-- 绑定href属性  获取到 item.link 点击图片后跳转 -->
             <a :href="item.link">
                 <!-- 绑定 src 属性 -->
-                <img :src="item.image" alt="">
+                <img :src="item.image" alt="" @load="imgLoad">
             </a>
         </swiper-item>
     </swiper>
@@ -27,6 +27,22 @@ export default {
     components: {
         Swiper,
         SwiperItem
+    },
+    data () {
+        return {
+            // 定义变量用来调用 计算高度
+            imgBool:false
+        }
+    },
+    methods: {
+        imgLoad() {
+            // 图片加载只计算一次
+            if(!this.imgBool){
+                // 调用父组件中的方法
+                this.$emit('swiperImgLoad')
+            }
+            this.imgBool = true
+        }
     }
 }
 </script>
