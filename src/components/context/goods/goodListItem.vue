@@ -1,7 +1,7 @@
 <template>
   <div class="goods-item" @click="itemClick">
       <!-- 获取图片数据 -->
-      <img :src="imgPath" alt="" @load="itemImgLoad">
+      <img v-lazy="imgPath" alt="" @load="itemImgLoad">
       <div class="goods-info">
           <!-- 商品标题 -->
           <p>{{goodsItem.title}}</p>
@@ -19,7 +19,7 @@ export default {
     computed: {
       // 通过计算属性 判断数据结构
       imgPath() {
-        return this.goodsItem.image || this.goodsItem.show.img 
+        return this.goodsItem.img || this.goodsItem.image || this.goodsItem.show.img
       }
     },
     methods: {
@@ -44,6 +44,9 @@ export default {
     min-height: 190px;
     height: auto;
     width: 48%;
+    background-color: #fff;
+    margin-top: 5px;
+    border-radius: 5px;
   }
 
   .goods-item img {
@@ -66,7 +69,8 @@ export default {
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-bottom: 3px;
-    
+    margin-left: 3px;
+    margin-right: 3px;
   }
 
   .goods-info .price {

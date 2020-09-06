@@ -19,7 +19,7 @@ export default {
         height: 44px;
         line-height: 44px;
         text-align: center;
-        box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+        /* box-shadow: 0 1px 5px rgba(0,0,0,0.2); */
     }
 
     .left,.right {
@@ -30,4 +30,5 @@ export default {
         /* flex为1的时候 会自动调整宽度 */
         flex: 1;
     }
+    
 </style>

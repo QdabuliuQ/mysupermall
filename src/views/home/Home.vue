@@ -213,7 +213,7 @@ export default {
         },
 
         /**
-         * 网路请求方法
+         * 网络请求方法
          */
         MgetHomeMultidata() {
             // 发送网络请求
@@ -276,8 +276,8 @@ export default {
     }
 
     .v-enter,.v-leave-to{
-            opacity: 0;
-            transform: translateX(180px);
+        opacity: 0;
+        transform: translateX(180px);
     }
 
     /* 动画执行期间 */

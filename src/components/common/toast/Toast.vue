@@ -30,7 +30,7 @@ export default {
 
 </script>
 <style scoped>
-    @import '~assets/css/animate.css';
+    /* @import '~assets/css/animate.css'; */
     /* @import '~assets/css/animate.min.css'; */
     .Toast{
         position: fixed;

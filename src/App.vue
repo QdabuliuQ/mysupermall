@@ -57,4 +57,7 @@ export default {
   .bottomNav{
     z-index: 10;
   }
+  #app{
+    touch-action: none
+  }
 </style>
